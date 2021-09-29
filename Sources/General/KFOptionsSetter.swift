@@ -41,7 +41,7 @@ extension KF.Builder: KFOptionSetter {
     public var delegateObserver: AnyObject { self }
 }
 
-#if canImport(SwiftUI) && canImport(Combine)
+#if canImport(SwiftUI) && canImport(Combine) && !(os(iOS) && (arch(i386) || arch(arm)))
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension KFImage: KFOptionSetter {
     public var options: KingfisherParsedOptionsInfo {
